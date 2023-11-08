@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
-  http_basic_authenticate_with name: "", password: "", except: [:index, :show]
-
+  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+  
   def index
     @articles = Article.all
   end
@@ -43,14 +43,6 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     redirect_to root_path, status: :see_other
-  end
-
-  def private_articles
-    @private_articles = Article.where(status: 'private')
-  end
-
-  def archived_articles
-    @archived_articles = Article.where(status: 'archived')
   end
 
   

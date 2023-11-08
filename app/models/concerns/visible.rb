@@ -12,18 +12,6 @@ module Visible
         where(status: 'public').count
       end
     end
-
-    class_methods do
-      def private_count
-        where(status: 'private').count
-      end
-    end
-  
-    class_methods do
-      def archived_count
-        where(status: 'archived').count
-      end
-    end
   
     def archived?
       status == 'archived'
