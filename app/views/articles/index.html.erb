@@ -1,6 +1,10 @@
-<h1>Articles</h1>
-
-Our blog has <%= Article.public_count %> articles and counting!
+<h1>My Articles</h1>
+<li>
+Our blog has <%= Article.public_count %> public articles!
+<li>
+Our blog has <%= Article.private_count %> private articles!
+<li>
+Our blog has <%= Article.archived_count %> archived articles!
 
 <ul>
   <% @articles.each do |article| %>
@@ -11,5 +15,6 @@ Our blog has <%= Article.public_count %> articles and counting!
     <% end %>
   <% end %>
 </ul>
-
+<p><%= link_to "My private Articles", "/articles/private" %><p>
+<p><%= link_to "My archived Articles", "/articles/archived" %><p>
 <%= link_to "New Article", new_article_path %>

@@ -1,0 +1,9 @@
+<h1>My Private Articles:</h1>
+
+<% @private_articles.each do |article| %>
+    <li>
+    <%= article.title %>
+  <% end %>
+
+
+  <p><%= link_to "Back", "/articles" %>
